@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Test1 from './components/Test1/Test1';
+import Test2 from './components/Test2/Test2';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+    <Router>
+   <Header />
+   <Switch>
+     <Route exact path="/home" component={Home} />
+     <Route path="/test1" component={Test1} />
+     <Route path="/test2" component={Test2} />
+   </Switch>
+ </Router>
+</React.StrictMode>
   );
 }
 
