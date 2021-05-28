@@ -2,12 +2,7 @@ import React from 'react';
 import { Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-export default class Header extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
+const Header = props => {
         return (
             <Nav variant="pills">
                 <LinkContainer to='/home'>
@@ -34,5 +29,6 @@ export default class Header extends React.Component {
             </NavDropdown> */}
             </Nav>
         )
-    }
-};
+    };
+
+    export default Header;
