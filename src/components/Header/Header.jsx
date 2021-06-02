@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -18,6 +18,14 @@ const Header = props => {
                 <LinkContainer to='/test2'>
                     <Nav.Link>
                         Test2
+                    </Nav.Link>
+                </LinkContainer>
+                <LinkContainer
+                    to='/Employee'
+                    //might have to pass in employeeId here, look at docs
+                >
+                    <Nav.Link>
+                        Employee
                     </Nav.Link>
                 </LinkContainer>
                 {/* <NavDropdown title="Administrator Tools" id="nav-dropdown">

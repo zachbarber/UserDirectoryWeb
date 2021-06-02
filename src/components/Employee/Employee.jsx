@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 const Employee = props => {
-        return (
-<h1>employee test</h1>
-        )
+    const [employeeData, setEmployeeData] = useState('');
+    const employeeId = 1; //set this to what's passed from URL params, useparamhook
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const { data: employeeData } = await axios.get(`/api/employees?id=${employeeId}`);
+                setEmployeeData(employeeData[0]);
+            } catch (err) {
+                throw err;
+            }
+        })()
+    }, [])
+
+    console.log(employeeData);
+
+    return (
+        <h1>employee test</h1>
+    )
 }
 
 export default Employee;
