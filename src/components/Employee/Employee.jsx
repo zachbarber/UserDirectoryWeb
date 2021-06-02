@@ -1,23 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-class Employee extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-
-        }
-    }
-
-    async componentDidMount() {
-
-    }
-
-    render() {
+const Employee = props => {
         return (
-<h1>test</h1>
+<h1>employee test</h1>
         )
-    }
 }
 
-export default class Employee;
+export default Employee;

@@ -1,13 +1,9 @@
 import React from 'react';
 
-export default class Test2 extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
+const Test2 = props => {
         return (
             <h1>test2</h1>
         )
-    }
-};
+    };
+
+export default Test2;
