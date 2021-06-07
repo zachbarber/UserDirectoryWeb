@@ -20,12 +20,9 @@ const Header = props => {
                         Test2
                     </Nav.Link>
                 </LinkContainer>
-                <LinkContainer
-                    to='/Employee'
-                    //might have to pass in employeeId here, look at docs
-                >
+                <LinkContainer to='/Departments'>
                     <Nav.Link>
-                        Employee
+                        Departments
                     </Nav.Link>
                 </LinkContainer>
                 {/* <NavDropdown title="Administrator Tools" id="nav-dropdown">
