@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
+import '../Departments/Departments.css'
 
 const Departments = props => {
-    const [departmentsData, setDepartmentsData] = useState('');
+    const [departmentsData, setDepartmentsData] = useState([]);
+    const { departmentSelectHandler } = props;
 
     useEffect(() => {
         (async () => {
@@ -16,18 +16,14 @@ const Departments = props => {
             }
         })()
     }, [])
-
-    console.log(departmentsData);
-
-    const departmentsList = departmentsData;
-    const departmentsListMapped = departmentsList.map(department => {
-        return <h1>{department.name}</h1>
+    const departmentsList = departmentsData.map((department, index) => {
+        
+        return <h1 key={index} onClick={() => departmentSelectHandler(department.id)}>{department.name}</h1>
     })
 
     return (
         <>
-            <h1>test</h1>
-            <div>{departmentsListMapped}</div>
+            <div>{departmentsList}</div>
         </>
     )
 }

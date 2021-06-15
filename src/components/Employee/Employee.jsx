@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
-
 const Employee = props => {
-    const [employeeData, setEmployeeData] = useState('');
-    const employeeId = 1; //set this to what's passed from URL params, useparamhook
+    const 
+    const [employeeData, setEmployeeData] = useState([]);
+    const employeeId = null; //set this to what's passed from URL params, useparamhook
 
     useEffect(() => {
         (async () => {
@@ -17,8 +17,6 @@ const Employee = props => {
             }
         })()
     }, [])
-
-    console.log(employeeData);
 
     return (
         <h1>employee test</h1>
