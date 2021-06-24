@@ -2,16 +2,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Test1 from './components/Test1/Test1';
 import Test2 from './components/Test2/Test2';
 import Departments from './components/Departments/Departments';
-import Employee from './components/Employee/Employee'
+import Employee from './components/Employee/Employee';
+import EmployeesList from './components/EmployeesList/EmployeesList';
 
 const App = () => {
 
+  const [selectedLink, setSelectedLink] = useState('');
   const [selectedDepartmentId, setSelectedDepartmentId] = useState(0);
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(0);
   const [isNewEmployeeFlag, setIsNewEmployeeFlag] = useState(false);
@@ -19,10 +21,12 @@ const App = () => {
 
   const departmentSelectHandler = (departmentId) => {
     setSelectedDepartmentId(departmentId);
+    setSelectedLink('/Department');
   }
 
   const employeeSelectHandler = (employeeId) => {
     setSelectedEmployeeId(employeeId);
+    setSelectedLink('/Employee');
   }
 
   const isNewEmployeeHandler = (isNewEmployee) => {
@@ -51,10 +55,13 @@ const App = () => {
           <Route path="/Employee" render={(props) => (<Employee
             selectedEmployeeId={selectedEmployeeId}
             isNewEmployeeFlag={isNewEmployeeFlag}
-            isNewEmployeeHandler={isNewEmployeeHandler}
+            isNewEmployeeHandler={isNewEmployeeHandler} />)}
+          />
+          <Route path="/EmployeesList" render={(props) => (<EmployeesList 
             employeeSelectHandler={employeeSelectHandler} />)}
           />
         </Switch>
+            <Redirect to ={selectedLink} />
       </Router>
     </React.StrictMode>
   );

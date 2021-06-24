@@ -25,6 +25,11 @@ const Header = props => {
                         Departments
                     </Nav.Link>
                 </LinkContainer>
+                <LinkContainer to='/EmployeesList'>
+                    <Nav.Link>
+                        Employees
+                    </Nav.Link>
+                </LinkContainer>
                 {/* <NavDropdown title="Administrator Tools" id="nav-dropdown">
               <NavDropdown.Item eventKey="4.1">Create Employee</NavDropdown.Item>
               <NavDropdown.Item eventKey="4.2">Edit Employee</NavDropdown.Item>
