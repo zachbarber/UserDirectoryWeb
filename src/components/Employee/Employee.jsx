@@ -3,23 +3,21 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const Employee = props => {
-    const params = useParams();
     const [employeeData, setEmployeeData] = useState([]);
-    const employeeId = 1; //set this to what's passed from URL params, useparamhook
-
+    const { id } = useParams();
     useEffect(() => {
         (async () => {
             try {
-                const { data: employeeData } = await axios.get(`/api/employees?id=${employeeId}`);
-                setEmployeeData(employeeData[0]);
+                const { data } = await axios.get(`/api/employees?id=${id}`);
+                setEmployeeData(data[0]);
             } catch (err) {
                 throw err;
             }
         })()
-    }, [])
+    }, [id])
 
     return (
-        <h1>employee test {employeeId}</h1>
+        <h1>{employeeData.id}</h1>
     )
 }
 

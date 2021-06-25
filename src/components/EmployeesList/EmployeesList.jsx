@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import '../EmployeesList/EmployeesList.css'
 
 const EmployeesList = props => {
+
+    const history = useHistory();
     const [employees, setEmployees] = useState([]);
-    const { employeeSelectHandler } = props;
 
     useEffect(() => {
         (async () => {
             try {
-                const { data: employeesData } = await axios.get(`/api/employees`);
-                setEmployees(employeesData);
+                const { data } = await axios.get(`/api/employees`);
+                setEmployees(data);
             } catch (err) {
                 throw err;
             }
@@ -18,7 +20,7 @@ const EmployeesList = props => {
     }, [])
     const employeesNameList = employees.map((employee, index) => {
 
-        return <h1 key={index} onClick={() => employeeSelectHandler(employee.id)}>{employee.name}</h1>
+        return <h1 className='employeeNameHeader' key={index} onClick={() => history.push(`/Employee/${employee.id}`)}>{employee.name}</h1>
     })
 
     return (
