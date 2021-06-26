@@ -19,7 +19,7 @@ const DepartmentsList = props => {
         })()
     }, [])
     const departmentsNameList = departments.map((department, index) => {
-        3
+        
         return <h1 className='departmentNameHeader' key={index} onClick={() => history.push(`/Department/${department.id}`)}>{department.name}</h1>
     })
 

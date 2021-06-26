@@ -20,7 +20,7 @@ const EmployeesList = props => {
     }, [])
     const employeesNameList = employees.map((employee, index) => {
 
-        return <h1 className='employeeNameHeader' key={index} onClick={() => history.push(`/Employee/${employee.id}`)}>{employee.name}</h1>
+        return <h1 className='employeeNameHeader' key={index} onClick={() => history.push(`/Employee/${employee.id}&isNew=false`)}>{employee.name}</h1>
     })
 
     return (

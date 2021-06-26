@@ -10,6 +10,7 @@ import Test2 from './components/Test2/Test2';
 import DepartmentsList from './components/DepartmentsList/DepartmentsList';
 import Employee from './components/Employee/Employee';
 import EmployeesList from './components/EmployeesList/EmployeesList';
+import EditEmployee from './components/EditEmployee/EditEmployee';
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/DepartmentsList" component={DepartmentsList} />
           <Route path="/Employee/:id" component={Employee} />
           <Route path="/EmployeesList" component={EmployeesList} />
+          <Route path="/EditEmployee/:id" component={EditEmployee} />
         </Switch>
       </Router>
     </React.StrictMode>
