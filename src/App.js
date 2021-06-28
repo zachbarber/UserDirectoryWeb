@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/DepartmentsList" component={DepartmentsList} />
           <Route path="/Employee/:id" component={Employee} />
           <Route path="/EmployeesList" component={EmployeesList} />
-          <Route path="/EditEmployee/:id" component={EditEmployee} />
+          <Route path="/EditEmployee/:id:isNew" component={EditEmployee} />
         </Switch>
       </Router>
     </React.StrictMode>

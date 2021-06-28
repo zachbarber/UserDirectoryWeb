@@ -35,7 +35,7 @@ const Employee = props => {
             <p>{employeeData.isSupervisor ? 'YES' : 'NO'}</p>
             <h1>Hire Date</h1>
             <p>{new Date(employeeData.hireDate).toLocaleDateString()}</p>
-            <button onClick={() => history.push(`/EditEmployee/${employeeData.id}`)}>Edit</button>
+            <button onClick={() => history.push(`/EditEmployee/${employeeData.id}&isNew=false`)}>Edit</button>
             <button>Delete</button> 
         </>
     )
